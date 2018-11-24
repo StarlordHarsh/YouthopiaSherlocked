@@ -6,13 +6,7 @@
 package youthopiasherlocked;
 
 import jaco.mp3.player.MP3Player;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Desktop;
 import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,26 +14,30 @@ import javax.swing.JOptionPane;
  * @author hj101
  */
 public class PinEntry extends javax.swing.JFrame {
-    static String pasw = "";
-    static String pass ="9898";
-    static int i = 0;
-    static final String corr = "Ccorrect.mp3"; 
-    MP3Player mp3playerCorr = new MP3Player(new File(corr));
-    static final String incorr = "Incorrect.mp3"; 
-    MP3Player mp3playerIncorr = new MP3Player(new File(incorr));
-    void pin() {
-        
-        this.txt_Pin.setText("PIN-"+pasw);
-    }
 
+    static String pasw = "";
+    static String pasw1 = "";
+    static String pass = "9898";
+    static int i = 0;
+    static final String corr = "Correct.mp3";
+    MP3Player mp3playerCorr = new MP3Player(new File(corr));
+    static final String incorr = "Incorrect.mp3";
+    MP3Player mp3playerIncorr = new MP3Player(new File(incorr));
+    int tryy=3;
+    void pin() {
+        txt_pin.setText("PIN-" + pasw);
+    }
+void save()
+{
+    pasw1=pasw;
+}
     /**
      * Creates new form PinEntry
      */
     public PinEntry() {
-        this.setDefaultCloseOperation(0);
+        setUndecorated(true);
         this.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
         initComponents();
-        txt_Pin.setBackground(Color.white);
     }
 
     /**
@@ -53,7 +51,6 @@ public class PinEntry extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        txt_Pin = new javax.swing.JLabel();
         No7 = new javax.swing.JButton();
         No9 = new javax.swing.JButton();
         No8 = new javax.swing.JButton();
@@ -68,21 +65,18 @@ public class PinEntry extends javax.swing.JFrame {
         Submit = new javax.swing.JButton();
         Cancel = new javax.swing.JButton();
         txt_Disp = new javax.swing.JLabel();
+        txt_pin = new javax.swing.JTextField();
 
         jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 51, 51));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         jLabel1.setText("Enter your PIN");
 
-        txt_Pin.setBackground(new java.awt.Color(0, 0, 0));
-        txt_Pin.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        txt_Pin.setText("PIN");
-        txt_Pin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        txt_Pin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
         No7.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        No7.setForeground(new java.awt.Color(0, 204, 0));
         No7.setText("7");
         No7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,6 +85,7 @@ public class PinEntry extends javax.swing.JFrame {
         });
 
         No9.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        No9.setForeground(new java.awt.Color(0, 204, 0));
         No9.setText("9");
         No9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +94,7 @@ public class PinEntry extends javax.swing.JFrame {
         });
 
         No8.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        No8.setForeground(new java.awt.Color(0, 204, 0));
         No8.setText("8");
         No8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +103,7 @@ public class PinEntry extends javax.swing.JFrame {
         });
 
         No4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        No4.setForeground(new java.awt.Color(0, 204, 0));
         No4.setText("4");
         No4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,6 +112,7 @@ public class PinEntry extends javax.swing.JFrame {
         });
 
         No5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        No5.setForeground(new java.awt.Color(0, 204, 0));
         No5.setText("5");
         No5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,6 +121,7 @@ public class PinEntry extends javax.swing.JFrame {
         });
 
         No6.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        No6.setForeground(new java.awt.Color(0, 204, 0));
         No6.setText("6");
         No6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,6 +130,7 @@ public class PinEntry extends javax.swing.JFrame {
         });
 
         No3.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        No3.setForeground(new java.awt.Color(0, 204, 0));
         No3.setText("3");
         No3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,6 +139,7 @@ public class PinEntry extends javax.swing.JFrame {
         });
 
         No1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        No1.setForeground(new java.awt.Color(0, 204, 0));
         No1.setText("1");
         No1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,6 +148,7 @@ public class PinEntry extends javax.swing.JFrame {
         });
 
         No2.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        No2.setForeground(new java.awt.Color(0, 204, 0));
         No2.setText("2");
         No2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,6 +157,7 @@ public class PinEntry extends javax.swing.JFrame {
         });
 
         No0.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        No0.setForeground(new java.awt.Color(0, 204, 0));
         No0.setText("0");
         No0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,6 +166,7 @@ public class PinEntry extends javax.swing.JFrame {
         });
 
         Del.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Del.setForeground(new java.awt.Color(247, 32, 32));
         Del.setText("Delete");
         Del.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,6 +175,7 @@ public class PinEntry extends javax.swing.JFrame {
         });
 
         Submit.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Submit.setForeground(new java.awt.Color(0, 205, 39));
         Submit.setText("Submit");
         Submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,187 +184,196 @@ public class PinEntry extends javax.swing.JFrame {
         });
 
         Cancel.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Cancel.setText("Cancel");
+        Cancel.setForeground(new java.awt.Color(247, 32, 32));
+        Cancel.setText("Clear");
         Cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CancelActionPerformed(evt);
             }
         });
 
+        txt_pin.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
+        txt_pin.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(Submit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Cancel)
-                .addGap(53, 53, 53))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(121, 121, 121)
+                .addGap(97, 97, 97)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Submit)
+                        .addGap(119, 119, 119)
+                        .addComponent(Del, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(No0, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(No5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(No6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(No1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(No7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(No2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(No3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(No8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txt_pin))
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(No9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(No4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                .addComponent(txt_Disp))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txt_Pin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(No4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(No1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(No7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(60, 60, 60)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_Disp)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addGap(15, 15, 15)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addComponent(No8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(75, 75, 75)
-                                                .addComponent(No9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(No0, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(No2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(54, 54, 54)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(No3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(Del, javax.swing.GroupLayout.Alignment.TRAILING)))))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(75, 75, 75)
-                                .addComponent(No5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(No6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(0, 51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txt_Pin)
-                .addGap(18, 18, 18)
-                .addComponent(txt_Disp)
-                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(txt_Disp))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txt_pin, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(No7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(No8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(No9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(No5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(No6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(No0, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(No1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(No2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(No3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(No4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(No7, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(No8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(No9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(No4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(No5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(No6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(No1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(No2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(No3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Del, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(No0, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cancel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addComponent(Submit, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void No7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_No7ActionPerformed
-        pasw+= "7";
+        pasw += "7";
         pin();
     }//GEN-LAST:event_No7ActionPerformed
 
     private void No8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_No8ActionPerformed
-        pasw+= "8";
+        pasw += "8";
         pin();
     }//GEN-LAST:event_No8ActionPerformed
 
     private void No9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_No9ActionPerformed
-        pasw+= "9";
+        pasw += "9";
         pin();
     }//GEN-LAST:event_No9ActionPerformed
 
     private void No4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_No4ActionPerformed
-       pasw+= "4";
+        pasw += "4";
         pin();
     }//GEN-LAST:event_No4ActionPerformed
 
     private void No5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_No5ActionPerformed
-        pasw+= "5";
+        pasw += "5";
         pin();
     }//GEN-LAST:event_No5ActionPerformed
 
     private void No6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_No6ActionPerformed
-        pasw+= "6";
+        pasw += "6";
         pin();
     }//GEN-LAST:event_No6ActionPerformed
 
     private void No1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_No1ActionPerformed
-        pasw+= "1";
+        pasw += "1";
         pin();
     }//GEN-LAST:event_No1ActionPerformed
 
     private void No2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_No2ActionPerformed
-       pasw+= "2";
+        pasw += "2";
         pin();
     }//GEN-LAST:event_No2ActionPerformed
 
     private void No3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_No3ActionPerformed
-        pasw+= "3";
+        pasw += "3";
         pin();
     }//GEN-LAST:event_No3ActionPerformed
 
     private void No0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_No0ActionPerformed
-        pasw+= "0";
+        pasw += "0";
         pin();
     }//GEN-LAST:event_No0ActionPerformed
 
     private void SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitActionPerformed
+        save();
+        while(pasw1!="")
+        {
+        while(tryy!=0)
+            {
         boolean flag = true;
-        
-            if (!pasw.equals(pass)) {
-                flag = false;
-            }
-        
+        if (!pasw.equals(pass)) {
+            flag = false;
+        }
         if (flag) {
             System.out.println("true");
             mp3playerCorr.play();
-            txt_Disp.setForeground(Color.GREEN);
-            JOptionPane.showMessageDialog(null,"Pssswords Matched !.");
+            txt_pin.setText("PIN-"+pasw);
+            JOptionPane.showMessageDialog(null, "Pssswords Matched !.");
             mp3playerCorr.stop();
+            pasw="";
+            pasw1="";
+            tryy=0;
+            txt_pin.setText("");
         } else {
+            
+                tryy--;
             System.out.println("false");
             mp3playerIncorr.play();
-            txt_Disp.setForeground(Color.RED);
-            JOptionPane.showMessageDialog(null,"Pssswords didn't Matched !.","Warning time left-",JOptionPane.ERROR_MESSAGE);
+            txt_pin.setText("PIN-"+pasw);
+            JOptionPane.showMessageDialog(null, "Pssswords didn't Matched !\nWarning tries left-"+tryy, "Warning", JOptionPane.ERROR_MESSAGE);
             mp3playerIncorr.stop();
+            pasw="";
+            pasw1="1";
+            txt_pin.setText("");
+            }
+        break;
         }
-        for (int j = 0; j < 4; j++) {
-            System.out.print(pasw);
+        break;
         }
     }//GEN-LAST:event_SubmitActionPerformed
 
     private void DelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DelActionPerformed
         StringBuilder str = new StringBuilder(pasw);
         int length = str.length();
-        str.deleteCharAt(length-1);
-        pasw=str.toString();
+        str.deleteCharAt(length - 1);
+        pasw = str.toString();
         pin();
     }//GEN-LAST:event_DelActionPerformed
 
     private void CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelActionPerformed
-        pasw="";
-        pin();
+        pasw = "";
+        txt_pin.setText("");
     }//GEN-LAST:event_CancelActionPerformed
 
     /**
@@ -393,7 +407,7 @@ public class PinEntry extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new PinEntry().setVisible(true);
-                
+
             }
         });
     }
@@ -415,6 +429,6 @@ public class PinEntry extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel txt_Disp;
-    private javax.swing.JLabel txt_Pin;
+    private javax.swing.JTextField txt_pin;
     // End of variables declaration//GEN-END:variables
 }
